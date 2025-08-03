@@ -1,18 +1,66 @@
-## Getting Started
+# Documentação do Projeto Sudoku em Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Visão Geral
+Implementação do jogo Sudoku em Java com:
+- Geração de tabuleiros aleatórios
+- Solução automática
+- Interface de terminal interativa
+- Validação de jogadas
 
-## Folder Structure
+## Estrutura do Projeto
 
-The workspace contains two folders by default, where:
+```
+src/
+├── main/
+│ ├── java/
+│ │ ├── sudoku/
+│ │ │ ├── core/ # Lógica principal
+│ │ │ ├── ui/ # Interface do usuário
+│ │ │ └── App.java # Ponto de entrada
+```
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Classes Principais
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### `Board`
+- Representa o tabuleiro 9x9
+- Gerencia células (valores e estado fixo)
+- Valida jogadas
 
-## Dependency Management
+### `Game`
+- Controla fluxo do jogo
+- Coordena geração e solução
+- Gerencia estado do jogo
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### `TerminalUI`
+- Interface de usuário via terminal
+- Processa comandos
+- Exibe tabuleiro formatado
+
+## Comandos Disponíveis
+
+| Comando         | Descrição                          |
+|-----------------|------------------------------------|
+| `linha col num` | Insere número na posição especificada |
+| `soluciona`     | Revela a solução completa do tabuleiro |
+| `novo`          | Inicia um novo jogo                |
+| `sair`          | Encerra o programa                 |
+| `ajuda`         | Mostra esta lista de comandos      |
+
+## Exemplo de Saída
+
+```
+    0 1 2   3 4 5   6 7 8
+   -----------------------
+0 | 1 . . | . . 6 | . . . |
+1 | . . 6 | . . . | . 2 3 |
+2 | . . 9 | . 2 . | 4 . 6 |
+   -----------------------
+...
+```
+
+## Melhorias Futuras
+
+* Interface gráfica
+
+* Temporizador
